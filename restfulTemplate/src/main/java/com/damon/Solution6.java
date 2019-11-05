@@ -1,6 +1,9 @@
 package com.damon;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * 反转一个单链表
  示例:
@@ -28,17 +31,30 @@ class Solution6 {
     }
 
     public static void main(String[] args) {
-        //1->2->3->4->5->NULL
-        ListNode listNode = new ListNode(1);
-        ListNode listNode1 = new ListNode(2);
-        ListNode listNode2 = new ListNode(3);
-        ListNode listNode3 = new ListNode(4);
-        ListNode listNode4 = new ListNode(5);
-        listNode.next=listNode1;
-        listNode1.next=listNode2;
-        listNode2.next=listNode3;
-        listNode3.next=listNode4;
-        ListNode listNode5 = reverseList(listNode);
-        System.out.println(listNode5);
+//        //1->2->3->4->5->NULL
+//        ListNode listNode = new ListNode(1);
+//        ListNode listNode1 = new ListNode(2);
+//        ListNode listNode2 = new ListNode(3);
+//        ListNode listNode3 = new ListNode(4);
+//        ListNode listNode4 = new ListNode(5);
+//        listNode.next=listNode1;
+//        listNode1.next=listNode2;
+//        listNode2.next=listNode3;
+//        listNode3.next=listNode4;
+//        ListNode listNode5 = reverseList(listNode);
+//        System.out.println(listNode5);
+        System.out.println(dataBaseColumnToJava("prod_name_no"));
     }
+
+    private static String dataBaseColumnToJava(String dataBasekey){
+        Matcher matcher = Pattern.compile("_(\\w)").matcher(dataBasekey);
+        StringBuffer sb = new StringBuffer();
+        while (matcher.find()) {
+            matcher.appendReplacement(sb, matcher.group(1).toUpperCase());
+        }
+        matcher.appendTail(sb);
+        return sb.toString();
+    }
+
+
 }
