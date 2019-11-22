@@ -25,10 +25,12 @@ public class Dog extends Animal{
 //        String idNumber = "330781199904251114";
 //        boolean idNumber1 = isIDNumber(idNumber);
 //        System.out.println(idNumber1);
-        HashMap<String, String> map = new HashMap<>();
-        map.put("key1","value1");
-        map.put("key2",String.valueOf((String)null));
-        System.out.println(JSONObject.toJSONString(map));
+        String s = String.valueOf(null);
+        System.out.println(s);
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("key1","value1");
+//        map.put("key2",String.valueOf((String)null));
+//        System.out.println(JSONObject.toJSONString(map));
     }
 
     public static boolean isIDNumber(String IDNumber) {
