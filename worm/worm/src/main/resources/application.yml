@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: customer-client
+  redis:
+    host: localhost
+    port: 6379
+# mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/worm?serverTimezone=GMT
+    username: root
+    password: 123456
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
